@@ -1,121 +1,70 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+﻿import { useEffect, useRef, useState } from 'react'
 import './App.css'
+import { songs } from './data/songs'
+import SongList from './components/SongList'
+import SongDetailPage from './components/SongDetailPage'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [selectedSong, setSelectedSong] = useState(null)
+  const listScrollY = useRef(0)
+
+  useEffect(() => {
+    if (selectedSong === null) {
+      window.scrollTo(0, listScrollY.current)
+    }
+  }, [selectedSong])
+
+  const openSongPage = (song) => {
+    listScrollY.current = window.scrollY
+    setSelectedSong(song)
+  }
+
+  const closeSongPage = () => {
+    setSelectedSong(null)
+  }
+
+  if (selectedSong) {
+    return <SongDetailPage song={selectedSong} onBack={closeSongPage} />
+  }
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+    <main className="concert-site">
+      <section className="hero-poster" aria-labelledby="concert-title">
+        <div className="hero-ghost" aria-hidden="true">
+          JULULLIM
         </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
 
-      <div className="ticks"></div>
+        <h1 id="concert-title" className="hero-main-title">
+          JULULLIM
+        </h1>
+        <p className="hero-subtitle">SPRING CONCERT</p>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
+        <div className="hero-info" aria-label="Concert date">
+          <p>2026.05.15_FRI</p>
         </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
+
+        <div className="hero-year" aria-hidden="true">
+          2026
+        </div>
+        <img
+          className="hero-emblem"
+          src="/hero-flower.png"
+          alt=""
+          aria-hidden="true"
+        />
+        <div className="hero-korean" aria-hidden="true">
+          {'\u6625\u97f3'}
         </div>
       </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+      <section className="setlist-section" aria-labelledby="setlist-title">
+        <div className="setlist-heading">
+          <h2 id="setlist-title">SETLIST</h2>
+          <p>2026 Spring Concert</p>
+        </div>
+        <SongList songs={songs} onSongSelect={openSongPage} />
+      </section>
+    </main>
   )
 }
 

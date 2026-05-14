@@ -1015,7 +1015,7 @@ oh yes you are
       { role: 'Bass', names: ['인병두'] },
       { role: 'Drum', names: ['박승현'] },
     ],
-    lyrics: `하나 둘 셋 넷(소리 질러주세요)
+    lyrics: `하나 둘 셋 넷 (소리 질러주세요)
 
 자꾸 마주치지 말아요 그대
 심장이 너무 뛰어서

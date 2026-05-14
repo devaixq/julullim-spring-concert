@@ -858,7 +858,7 @@
 
   .song-part-title {
     padding: 12px 2px 7px;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 
   .song-part {
@@ -875,7 +875,7 @@
   }
 
   .song-index {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     transform: translateX(-5px);
   }
 

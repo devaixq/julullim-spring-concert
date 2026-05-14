@@ -13,7 +13,7 @@
   min-height: 100vh;
   height: auto;
   margin: 0 auto;
-  padding: 20px 16px 96px;
+  padding: 20px 16px 0;
   overflow-x: hidden;
   overflow-y: visible;
 }
@@ -750,7 +750,7 @@
 
 @media (max-width: 768px) {
   .concert-site {
-    padding: 20px 16px 104px;
+    padding: 20px 16px 0;
   }
 
   .hero-poster {
@@ -808,6 +808,7 @@
   .setlist-section {
     margin-top: -8px;
     padding-top: 22px;
+    
   }
 
   .setlist-heading h2 {
@@ -896,7 +897,7 @@
 @media (min-width: 769px) {
   .concert-site {
     width: min(100%, 1120px);
-    padding: clamp(32px, 5vw, 72px) clamp(18px, 4vw, 56px) 112px;
+    padding: 20px 16px 0;
   }
 
   .hero-poster {

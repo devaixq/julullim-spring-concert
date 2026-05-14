@@ -3,7 +3,7 @@ export const songs = [
     id: 1,
     part: 1,
     number: '01',
-    title: '좋아해',
+    title: '좋아해..',
     originalArtist: '죠지',
     performers: [
       { role: 'Vocal', names: ['백용우'] },

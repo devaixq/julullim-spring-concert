@@ -612,6 +612,10 @@
   line-height: 1.25;
 }
 
+.detail-performer-name-line {
+  display: block;
+}
+
 .detail-lyrics-section {
   position: relative;
   margin-top: 34px;
@@ -836,7 +840,6 @@
   .setlist-section {
     margin-top: -8px;
     padding-top: 22px;
-    
   }
 
   .setlist-heading h2 {

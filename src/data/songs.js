@@ -913,7 +913,7 @@ You and your family too
     title: 'ㅋ',
     originalArtist: '장기하와 얼굴들',
     performers: [
-      { role: 'Vocal', names: ['신서원 & 전재민 & 최이흠'] },
+      { role: 'Vocal', names: ['신서원 & 전재민 &', '최이흠'] },
       { role: 'Guitar', names: ['최이흠'] },
       { role: 'Cajon', names: ['전재민'] },
     ],

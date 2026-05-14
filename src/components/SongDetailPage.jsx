@@ -55,7 +55,13 @@ function SongDetailPage({ song, onBack }) {
                   className="detail-performer-card"
                   key={`${performer.role}-${index}`}
                 >
-                  <p className="detail-performer-names">{performer.names.join(', ')}</p>
+                  <p className="detail-performer-names">
+                    {performer.names.map((name) => (
+                      <span className="detail-performer-name-line" key={name}>
+                        {name}
+                      </span>
+                    ))}
+                  </p>
                   <p className="detail-performer-role">{performer.role}</p>
                 </article>
               ))}

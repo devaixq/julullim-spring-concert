@@ -747,7 +747,7 @@ You and your family too
     title: '푸르른 이 여름 지나',
     originalArtist: '이젤',
     performers: [
-      { role: 'Vocal', names: ['김고운'] },
+      { role: 'Vocal', names: ['김고은'] },
       { role: 'Guitar', names: ['백용우 & 김고은'] },
       { role: 'Piano', names: ['김한율 & 김세정'] },
       { role: 'Bass', names: ['김윤호'] },
